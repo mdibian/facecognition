@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: black;
+  font-size: 1.15em;
+  margin: 10px 10px 0 10px;
+  cursor: pointer;
+}
+
+.nav-links:hover {
+  opacity: 0.65;
+}
+
+.nav-links:active {
+  opacity: 0.45;
+}

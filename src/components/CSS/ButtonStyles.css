@@ -1,0 +1,11 @@
+.purple-button {
+  background: #cc33ff;
+  border: none;
+  border-radius: 5px;
+  color: whitesmoke;
+  transition: all 0.1s ease;
+}
+
+.purple-button:active {
+  transform: scale(1.15);
+}

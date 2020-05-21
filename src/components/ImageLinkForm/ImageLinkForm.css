@@ -1,0 +1,11 @@
+#url-input {
+  width: calc(100% - 80px);
+  max-width: 400px;
+  height: 30px;
+}
+
+#upload-button {
+  width: 100px;
+  height: 34px;
+  margin: 10px 0 0 10px;
+}
