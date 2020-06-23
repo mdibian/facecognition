@@ -46,11 +46,9 @@ class Register extends React.Component {
     })
     .then(response => response.json())
     .then(data => { 
-      if (data === 'successful registration!') { 
-        console.log(data);
+      if (typeof data.email !== 'undefined') { 
         this.props.onRouteChange('signin');
       } else {
-        console.log(data)
         this.props.onRouteChange('register');
       }
     })
