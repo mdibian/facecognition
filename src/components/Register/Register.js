@@ -58,18 +58,18 @@ class Register extends React.Component {
     return (
       <div id='outer-div'>
         <p id='p-signin'>Register</p>
-        <form style={{'marginBottom': '20px'}}>
+        <form onSubmit={e => this.onSubmitSignIn(e)} style={{'marginBottom': '20px'}}>
           <div id='inner-div'>
             <label>Name:</label>
-            <input type='text' onChange={e => this.onNameChange(e)}/>
+            <input type='text' onChange={e => this.onNameChange(e)} required/>
             <label>E-mail:</label>
-            <input type='text' onChange={e => this.onEmailChange(e)}/>
+            <input type='email' onChange={e => this.onEmailChange(e)} required/>
             <label>Password:</label>
-            <input type='password' onChange={e => this.onPasswordChange(e)}/>
+            <input type='password' onChange={e => this.onPasswordChange(e)} required/>
             <label>Confirm Password:</label>
-            <input type='password' onChange={e => this.onPassConfirmChange(e)}/>
+            <input type='password' onChange={e => this.onPassConfirmChange(e)} required/>
           </div>
-          <button onClick={e => this.onSubmitSignIn(e)} id='register-button' className='purple-button'>Register</button>
+          <button id='register-button' className='purple-button'>Register</button>
         </form>
       </div> 
     );

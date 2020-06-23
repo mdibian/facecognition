@@ -8,7 +8,6 @@ import Signin from '../components/Signin/Signin.js'
 import Register from '../components/Register/Register.js'
 import FaceRecognition from '../components/FaceRecognition/FaceRecognition.js'
 import Particles from 'react-particles-js'
-import Clarifai from 'clarifai'
 
 const particlesParams = {
   particles: {
@@ -21,10 +20,6 @@ const particlesParams = {
     }
   }
 }
-
-const app = new Clarifai.App({
-  apiKey: '43e894a293f54a3e93017006280cfa9d'
-});
 
 class App extends Component {
   constructor() {
@@ -41,7 +36,8 @@ class App extends Component {
         email: '',
         entries: 0,
         joined: ''
-      }
+      },
+      isResponseValid: true
     }
   }
 
@@ -93,13 +89,20 @@ class App extends Component {
   }
 
   onSubmit(event) {
-    this.setState({imgUrl: this.state.input})
-    
-    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
+    fetch('http://localhost:3000/imageUrl', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        input: this.state.input
+      })
+    })
+    .then(response => response.json())
     .then(response => {
+      
       if (response) {
-        console.log('theres a response');
-        fetch('http://localhost:3000/image', {
+        this.setState({isResponseValid: true});
+
+        fetch('http://localhost:3000/entries', {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -110,10 +113,17 @@ class App extends Component {
         .then(count => { 
           this.setState(Object.assign(this.state.user, { entries: count }))
         })
+        
+        this.setState({imgUrl: this.state.input});
+        this.displayBoundingBox(response);
+      } else {
+        this.setState({isResponseValid: false});
       }
-      this.displayBoundingBox(response);
     })
-    .catch(err => console.log(err))
+    .catch(err => { 
+      console.log(err);
+      this.setState({isResponseValid: false});
+    })
   }
 
   onRouteChange(route) {
@@ -140,7 +150,11 @@ class App extends Component {
             <ImageLinkForm 
               onInputChange={this.onInputChange.bind(this)}
               onSubmit={this.onSubmit.bind(this)} />
-            <FaceRecognition boundingBox={boundingBox} imgUrl={imgUrl} /> 
+
+              {this.state.isResponseValid && 
+                <FaceRecognition boundingBox={boundingBox} imgUrl={imgUrl} />
+              }
+            
           </div>
           : 
           (

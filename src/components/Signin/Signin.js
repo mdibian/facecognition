@@ -22,6 +22,7 @@ class Signin extends React.Component {
   onSubmitSignIn(event) {
     event.preventDefault();
 
+    console.log('AAAAAAAAAAAAAAAA erro')
     const { signInEmail, signInPassword } = this.state;
 
     fetch('http://localhost:3000/signin', {
@@ -45,14 +46,14 @@ class Signin extends React.Component {
     return (
       <div id='outer-div'>
         <p id='p-signin'>Sign In</p>
-        <form>
+        <form onSubmit={e => this.onSubmitSignIn(e)}>
           <div id='inner-div'>
             <label>E-mail:</label>
-            <input type='text' onChange={e => this.onEmailChange(e)}/>
+            <input type='email' onChange={e => this.onEmailChange(e)} required/>
             <label>Password:</label>
-            <input type='password' onChange={e => this.onPasswordChange(e)}/>
+            <input type='password' onChange={e => this.onPasswordChange(e)} required/>
           </div>
-          <button onClick={e => this.onSubmitSignIn(e)} id='register-button' className='purple-button'>Sign In</button>
+          <button id='register-button' className='purple-button'>Sign In</button>
         </form>
         <div style={{'margin': '20px'}}>
           <p id='p-text'>Don't have an account yet? Register </p>
