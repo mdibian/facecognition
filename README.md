@@ -1,7 +1,26 @@
 # Facecognition
 
-This application was made with React.js and was intended to put these things into practice.
-It lets you register, sign-in and send an image through an artificial intelligence API which tries to detect human faces.
+Facecognition is an application that allows you send an image through an artificial intelligence API which tries to detect human faces. The project was intended only to put some web development technologies into practice.
+
+## Technologies
+
+The project front-end was made with [React.js](https://reactjs.org/). The back-end was made with [Node.js](https://nodejs.org/en/), [Express.js](https://expressjs.com/), and [PostgreSQL](https://www.postgresql.org/) as the database, and can be found here in [facecognition-api](https://github.com/mdibian/facecognition-api).
+
+## Run Project Locally 
+
+To initiate and run the project locally on your machine, run the command below to install all dependencies.
+ ```
+ npm install
+ ``` 
+ 
+After this, you can initate the project by running
+ ```
+ npm start
+ ```
+ 
+  Remembering that this repository contains the front-end part only. 
+  
+  
 
 <img src='images/home_screenshot.png' width=800px>
 
