@@ -8,3 +8,5 @@ It lets you register, sign-in and send an image through an artificial intelligen
 Well, It also shows the number of submissions you've made, so, do your best! :)
 
 ![](images/detect_screenshot.png)
+
+(actually It seems to detect girls anime faces too, heh...)
