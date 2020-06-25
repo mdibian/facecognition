@@ -23,6 +23,9 @@ After this, you can initate the project by running
 In order to get the back-end working properly you'll have to head to the [facecognition-api](https://github.com/mdibian/facecognition-api) repository and follow the instructions as well.
 
 ## Usage example
+
 Well, It will count your entries too, so, do your best! :)
+
 (It seems to detect anime faces too, how cool is that?)
+
 <img src='images/detect_screenshot.png' width=800px>
