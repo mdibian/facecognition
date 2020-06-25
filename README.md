@@ -24,7 +24,7 @@ In order to get the back-end working properly you'll have to head to the [faceco
 
 ## Usage example
 
-Well, It will count your entries too, so, do your best! :)
+You will have an entry count, so, do your best! :)
 
 (It seems to detect anime faces too, how cool is that?)
 
