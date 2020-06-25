@@ -1,6 +1,6 @@
 # Facecognition
 
-Facecognition is an application that allows you to detect faces on an image through an artificial intelligence API. The project is pretty simple and was intended only to put some web development technologies into practice, you can register, sign-in and send an image right away!
+[Facecognition](https://facecognition.herokuapp.com/) is an application that allows you to detect faces on an image through an artificial intelligence API. The project is pretty simple and was intended only to put some web development technologies into practice, you can register, sign-in and send an image right away!
 
 <img src='images/home_screenshot.png' width=800px>
 
