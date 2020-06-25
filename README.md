@@ -1,6 +1,6 @@
 # Facecognition
 
-Facecognition is an application that allows you send an image through an artificial intelligence API which tries to detect faces. The project was intended only to put some web development technologies into practice.
+Facecognition is an application that allows you send an image through an artificial intelligence API which tries to detect faces. The project is pretty simple and was intended only to put some web development technologies into practice.
 
 <img src='images/home_screenshot.png' width=800px>
 
