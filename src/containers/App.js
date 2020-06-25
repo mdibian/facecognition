@@ -138,6 +138,8 @@ class App extends Component {
   }
 
   render() {
+    document.title = 'Facecognition';
+
     const { imgUrl, boundingBox, route, isSignedIn } = this.state;
 
     return (

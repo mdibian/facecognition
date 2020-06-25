@@ -23,7 +23,6 @@ class Signin extends React.Component {
   onSubmitSignIn(event) {
     event.preventDefault();
 
-    console.log('AAAAAAAAAAAAAAAA erro')
     const { signInEmail, signInPassword } = this.state;
 
     fetch(getEndPoint('signin'), {
