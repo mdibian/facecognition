@@ -1,6 +1,7 @@
 import React from 'react'
 import '../CSS/ButtonStyles.css'
 import '../CSS/Forms.css'
+import getEndPoint from '../../getEndPoint.js'
 
 class Register extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class Register extends React.Component {
     
     const { signInName, signInEmail, signInPassword, signInPassConfirm } = this.state;
 
-    fetch('http://localhost:3000/register', {
+    fetch(getEndPoint('register'), {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({

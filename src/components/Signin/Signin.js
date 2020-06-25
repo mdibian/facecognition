@@ -1,6 +1,7 @@
 import React from 'react'
 import '../CSS/ButtonStyles.css'
 import '../CSS/Forms.css'
+import getEndPoint from '../../getEndPoint.js'
 
 class Signin extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class Signin extends React.Component {
     console.log('AAAAAAAAAAAAAAAA erro')
     const { signInEmail, signInPassword } = this.state;
 
-    fetch('http://localhost:3000/signin', {
+    fetch(getEndPoint('signin'), {
       method: 'post',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({

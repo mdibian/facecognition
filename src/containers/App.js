@@ -8,6 +8,7 @@ import Signin from '../components/Signin/Signin.js'
 import Register from '../components/Register/Register.js'
 import FaceRecognition from '../components/FaceRecognition/FaceRecognition.js'
 import Particles from 'react-particles-js'
+import getEndPoint from '../getEndPoint.js'
 
 const particlesParams = {
   particles: {
@@ -89,7 +90,7 @@ class App extends Component {
   }
 
   onSubmit(event) {
-    fetch('http://localhost:3000/imageUrl', {
+    fetch(getEndPoint('imageUrl'), {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -102,7 +103,7 @@ class App extends Component {
       if (response) {
         this.setState({isResponseValid: true});
 
-        fetch('http://localhost:3000/entries', {
+        fetch(getEndPoint('entries'), {
           method: 'put',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
